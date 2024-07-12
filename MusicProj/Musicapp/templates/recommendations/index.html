@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Recommendations</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Music Recommendations</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <div class="form-group">
+                {{ song_form.as_p }}
+            </div>
+            <button type="submit" class="btn-submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

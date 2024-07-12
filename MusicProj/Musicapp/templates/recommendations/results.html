@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommendations</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/results.css' %}">
+</head>
+<body>
+    <div class="container">
+        {% if recommendations %}
+            <h2>Music Recommendations for "{{ song_name }}"</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Track Name</th>
+                        <th>Artists</th>
+                        <th>Album Name</th>
+                        <th>Release Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for recommendation in recommendations %}
+                        <tr>
+                            <td>{{ recommendation.Track_Name }}</td>
+                            <td>{{ recommendation.Artists }}</td>
+                            <td>{{ recommendation.Album_Name }}</td>
+                            <td>{{ recommendation.Release_Date }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No recommendations found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
