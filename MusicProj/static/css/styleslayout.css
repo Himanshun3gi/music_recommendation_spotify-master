@@ -1,0 +1,377 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #000;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.download-btn {
+    background-color: #1DB954;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: #fff;
+}
+
+.hero {
+    background-color: #1DB954;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    padding-bottom:0%;
+    padding-inline-end: 0%;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.hero .btn-primary {
+    background-color: #fff;
+    color: #1DB954;
+    padding: 10px 20px;
+    margin-left: 120px;
+    
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.features {
+    background-color: #f9f9f9;
+    padding: 40px;
+    text-align: center;
+}
+
+
+.container {
+    overflow: hidden; /* Ensures elements don't overflow during animation */
+}
+
+#feature-image {
+    width: 100%;
+
+    opacity: 0; /* Start with the logo invisible */
+    transform: translateX(-100%); /* Start with the logo off-screen to the left */
+    animation: slideIn 1s forwards; /* 1s duration, forwards retains the final state */
+}
+
+/* Define the keyframes for the slide-in animation */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0); /* End with the logo in its final position */
+    }
+}
+
+.features h2 {
+    margin-bottom: 20px;
+}
+
+.feature {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    text-align: left;
+}
+
+.feature img {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    margin-top: 0;
+}
+
+.free {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    padding: 40px 0; /* Add padding at top and bottom */
+    overflow: hidden;
+    margin: 0;
+}
+
+.music {
+    position: relative;
+    height: 100vh; /* Ensure the container has a height for the video */
+    width: 100%; /* Ensure the container spans full width */
+    margin: 0; /* Ensure no extra margins */
+}
+
+#music-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.overlay-content {
+    position: absolute;
+    bottom: 80%; /* Adjust this value to position it properly */
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background:#1DB954; /* Semi-transparent background for readability */
+    box-sizing: border-box;
+}
+
+.overlay-content2 {
+    position: absolute;
+    bottom: 0; /* Aligns to the bottom of the section */
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: transparent; /* Transparent background for the scroll section */
+    box-sizing: border-box;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents line breaks */
+    padding-bottom: 60px; /* Adds space for scrollbar */
+}
+
+.scroll-container {
+    display: flex;
+    gap: 20px; /* Space between items */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: center; /* Center items horizontally */
+}
+#tool{
+    object-fit: scale-down;
+}
+.scroll-item {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background for each item */
+    color: #fff;
+    padding: 20px;
+    width: 250px; /* Width of each scroll item */
+    height: 500px; /* Height of each scroll item */
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide content when not zoomed */
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.scroll-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Maintain aspect ratio */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity change */
+}
+
+.scroll-item:hover img {
+    opacity: .5; /* Make image transparent on hover */
+}
+
+.scroll-item.h2 {
+    margin: 0;
+    padding-top: 10px; /* Add space from the top */
+    font-size: 1.5em;
+    color: #ffffff;
+    z-index: 1; /* Ensure heading is above other content */
+    position: absolute;
+    top: 20px; /* Position the heading from the top */
+    left: 20px; /* Position the heading from the left */
+    right: 20px; /* Ensure it stays within the bounds */
+    overflow: hidden; /* Prevent overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text is too long */
+}
+
+.scroll-item .content.h2 {
+    text-decoration-line: underline;
+    opacity: 0;
+    max-width: 100%;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    bottom: 80%; /* Position content at the bottom */
+    left: 20px;
+    right: 20px;
+}
+.scroll-item .content  {
+    opacity: 0;
+    max-width: auto;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    bottom: 10px; /* Position content at the bottom */
+    left: 20px;
+    right: 20px;
+}
+
+.scroll-item:hover {
+    margin-top: 10px;
+    transform: scale(1.2); /* Slight zoom effect on hover */
+    background: #1DB954; /* More opaque background on hover */
+}
+
+.scroll-item:hover .content {
+    opacity: 1; /* Show additional content on hover */
+}
+
+.overlay-content h1 {
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 20px; /* Add space below the heading */
+}
+
+
+.faq {
+    padding: 2rem;
+    background-color: white;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#about{
+    font-size: 2.5rem;
+    color: #1DB954;
+}
+
+h2 {
+    font-size: 1.75rem;
+    color: #000000;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.person-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+}
+
+.person-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 0.75rem;
+}
+
+.location {
+    display: block;
+    font-size: 1rem;
+    color: #666;
+    margin-top: 0.25rem;
+}
+
+.duration {
+    display: block;
+    font-size: 0.875rem;
+    color: #000000;
+    margin-top: 0.5rem;
+}
+
+.faq-section {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.faq-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.faq-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.faq-section li {
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+.faq-section li:last-child {
+    border-bottom: none;
+}
+
+    
+
+.cta {
+    background-color: #1DB954;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+}
+
+.cta .btn-primary {
+    background-color: #fff;
+    color: #1DB954;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+

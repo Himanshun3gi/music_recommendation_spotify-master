@@ -54,3 +54,5 @@ def index(request):
 
     return render(request, 'recommendations/index.html', {'form': form, 'song_form': song_form})
 
+def home(request):
+    return render(request,'recommendations/layout.html')
