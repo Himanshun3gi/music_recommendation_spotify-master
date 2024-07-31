@@ -52,7 +52,8 @@ def index(request):
         form = PlaylistForm()
         song_form = SongForm()
 
-    return render(request, 'recommendations/index.html', {'form': form, 'song_form': song_form})
+    return render(request, 'recommendations/recommend.html', {'form': form, 'song_form': song_form})
 
 def home(request):
-    return render(request,'recommendations/layout.html')
+    return render(request,'recommendations/index1.html')
+

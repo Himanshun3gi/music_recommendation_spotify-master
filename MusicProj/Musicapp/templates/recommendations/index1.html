@@ -1,0 +1,92 @@
+{% extends 'recommendations/base.html' %}
+
+{% block title %}Home | Spotify Landing Page{% endblock %}
+
+{% block content %}
+{%load static%}
+<section class="hero">
+    <div class="content">
+        <h1>MUSIC RECOMMENDATION</h1>
+        <h2>Millions of songs and podcasts<br>Let us find the best for you.</h2>
+        <br><br>
+        <a href="{%url 'index'%}" class="btn-primary">GET RECOMMENDED</a>
+    </div>
+    <div class="hero-image">
+        <img src="{% static 'images/hero.png' %}" alt="Hero Image">
+    </div>
+</section>
+
+<section class="features">
+    <h2>Why Us</h2>
+    <div class="features-image">
+        <img src="{% static 'images/feature.png' %}" id="feature-image" alt="Features">
+    </div>
+</section>
+
+<section class="free">
+    <div class="music">
+        <video autoplay muted loop id="music-video">
+            <source src="{% static 'images/spotify.mp4' %}" type="video/mp4">
+        </video>
+        <div class="overlay-content">
+            <h1>MUSIC RECOMMENDATION</h1>
+        </div>
+        <div class="overlay-content2">
+            <div class="scroll-container">
+                <div class="scroll-item">
+                    <img src="{% static 'images/tool.png' %}" alt="Tools">
+                    <div class="content">
+                        <h2>Tools Used</h2>
+                        <p> Django<br> Spotipy<br> Library<br> SkLearn</p>
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <img src="{% static 'images/music.png' %}" alt="Content-Based Filtering">
+                    <div class="content">
+                        <h2>Content-Based <br> Filtering</h2>
+                        <p>Recommends songs<br> based on similarity<br> in music features.</p>
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <img src="{% static 'images/music.png' %}" alt="Hybrid Filtering">
+                    <div class="content">
+                        <h2>Hybrid Filtering</h2>
+                        <p>Combines content-based<br> and popularity-based<br> recommendations.</p>
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <img src="{% static 'images/music.png' %}" alt="API Integration">
+                    <div class="content">
+                        <h2>API Integration</h2>
+                        <p>Utilizes the Spotify API<br> for fetching music<br> data and features.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq">
+    <h1 id="about">About Us</h1>
+    <h2>The Team</h2>
+    <div class="team-container">
+        <div class="person-card">
+            <img src="{% static 'images/music.png' %}" alt="K Sai Sanvi">
+            <p class="name">K Sai Sanvi</p>
+            <span class="location">RNSIT, Bengaluru</span>
+            <span class="duration">2021-2025</span>
+        </div>
+        <div class="person-card">
+            <img src="{% static 'images/music.png' %}" alt="Himanshu Negi">
+            <p class="name">Himanshu Negi</p>
+            <span class="location">RNSIT, Bengaluru</span>
+            <span class="duration">2021-2025</span>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Ready, Let’s play!</h2>
+    <p>This project implements a music recommendation system using the Spotify API, incorporating content-based and hybrid recommendation algorithms.</p>
+</section>
+{% endblock %}

@@ -3,39 +3,41 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #141414;
+  background-color:#1DB954;
+  color: #333;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: #007BFF;
 }
 
 /* Container for the recommendation section */
 .containerrec {
-  display: flex;
+  flex:1;
+ 
   justify-content: space-between;
   align-items: flex-start;
   padding: 20px;
   margin: 20px auto;
   max-width: 1200px;
-  background-color: #21cb40;
+  background-color: #70d582;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
-/* Form container */
 .rec {
   flex: 1;
-  padding: 20px;
-  padding-top: 80px;
   max-width: 50%;
-  box-sizing: border-box;
+  padding: 20px;
 }
 
 .rec h1 {
   font-size: 2em;
-  padding-bottom: 30px;
   margin-bottom: 20px;
-  color: #000000;
+  color: #fffdfd;
 }
 
 .form-grouprec {
@@ -58,7 +60,7 @@ body {
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 1em;
-  color: #000000;
+  color: #333;
   background-color: #f9f9f9;
 }
 
@@ -83,16 +85,15 @@ body {
 }
 
 .btn-submitrec:hover {
-  background-color: #0f3b16;
+  background-color: #0056b3;
 }
 
 /* Image and details section */
 .details {
   flex: 1;
-  max-width: 50%;
+  max-width: 45%;
   padding: 20px;
-  box-sizing: border-box;
-  text-align: left;
+  text-align: right;
 }
 
 .details img {
@@ -104,59 +105,11 @@ body {
 .details h2 {
   font-size: 1.5em;
   margin-top: 20px;
-  color: #000000;
+  color: #333;
 }
 
 .details p {
-  text-decoration-style: wavy;
-  text-align: center;
-  font-size: 1.1em;
-  color: #000000;
-  line-height: 1.6;
-}
-
-/* Slider Styles */
-/* Slider Styles */
-.slider {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  height: 450px; /* Set a fixed height for the slider */
-}
-
-.slider-container {
-  display: flex;
-  transition: transform 0.5s ease;
-  height: 100%; /* Ensure the container takes the full height */
-}
-
-.slider-item {
-  min-width: 100%;
-  box-sizing: border-box;
-  overflow: hidden; /* Hide overflow if image exceeds the container */
-  height: 100%; /* Ensure each item takes the full height */
-}
-
-.slider-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the images are cropped to fit the container */
-  display: block;
-}
-.text-container {
-  margin-top: 20px;
-  text-align: left;
-  color: #000000; /* You can set a different color based on your design */
-}
-
-.text-container h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-.text-container p {
-  font-size: 1.5em;
+  font-size: 1em;
+  color: #555;
   line-height: 1.6;
 }

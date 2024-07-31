@@ -1,0 +1,97 @@
+{% extends 'recommendations/base.html' %}
+
+
+{% block title %}RECOMMENDATION{% endblock %}
+
+{% block content %}
+{%load static%}
+<section class="containerrec" id="containerrec">
+    <div class="rec">
+        <h1>GET     RECOMMENDATION</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-grouprec">
+                {{ form.as_p }}
+            </div>
+            <div class="form-grouprec">
+                {{ song_form.as_p }}
+            </div>
+            <button type="submit" class="btn-submitrec">Submit</button>
+        </form>
+    </div>
+    
+    <div class="details">
+        <div class="slider">
+            <div class="slider-container">
+                <div class="slider-item"><img src="{% static 'images/ss.png' %}" alt="Image 1"></div>
+                <div class="slider-item"><img src="{% static 'images/ss1.png' %}" alt="Image 1"></div>
+                <div class="slider-item"><img src="{% static 'images/ss2.png' %}" alt="Image 2"></div>
+                <div class="slider-item"><img src="{% static 'images/ss3.png' %}" alt="Image 3"></div>
+                <!-- Add more slider items as needed -->
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                let sliderContainer = document.querySelector('.slider-container');
+                let sliderItems = document.querySelectorAll('.slider-item');
+                let currentIndex = 0;
+            
+                function showNextSlide() {
+                    currentIndex = (currentIndex + 1) % sliderItems.length;
+                    sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+            
+                setInterval(showNextSlide, 3000); // Change slides every 3 seconds
+            });
+            </script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    let sliderContainer = document.querySelector('.slider-container');
+                    let sliderItems = document.querySelectorAll('.slider-item');
+                    let currentIndex = 0;
+                
+                    // Text corresponding to each image
+                    let textContent = [
+                        {
+                            title: "Search for the playlist you want",
+                            description: "Discover personalized music recommendations tailored just for you..."
+                        },
+                        {
+                            title: "Search for the playlist you want",
+                            description: "Discover personalized music recommendations tailored just for you..."
+                        },
+                        {
+                            title: "Click on drop down > Share > Embed playlist",
+                            description: "Handpicked tracks to suit every mood and occasion."
+                        },
+                        {
+                            title: "Copy and Paste it!",
+                            description: "Be the first to get recommendations"
+                        }
+                    ];
+                
+                    let titleElement = document.getElementById('slider-text');
+                    let descriptionElement = document.getElementById('slider-description');
+                
+                    function updateText(index) {
+                        titleElement.textContent = textContent[index].title;
+                        descriptionElement.textContent = textContent[index].description;
+                    }
+                
+                    function showNextSlide() {
+                        currentIndex = (currentIndex + 1) % sliderItems.length;
+                        sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+                        updateText(currentIndex);
+                    }
+                
+                    setInterval(showNextSlide, 3000); // Change slides every 3 seconds
+                });
+                
+            </script>
+            <h2 id="slider-text">Steps to get recommendations</h2>
+        <p id="slider-description">Discover personalized music recommendations tailored just for you...</p>
+            
+
+    </div>
+</section>
+{%endblock%}
